@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homework Review</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
+    }
+    select, button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .lessons-container {
+        margin-top: 20px;
+    }
+    .lesson {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .lesson h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .student {
+        margin-bottom: 10px;
+    }
+    .student h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    .files-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .files-list li {
+        margin-bottom: 5px;
+    }
+
+    /* Style for the submit button */
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect for the submit button */
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Homework Review</h1>
+    <form id="review-form">
+        <div class="form-group">
+            <label for="month">Select Month:</label>
+            <select id="month" name="month">
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <!-- Add more months as needed -->
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="lessons-container" id="lessons-container" style="display: none;">
+        <!-- Lessons will be dynamically added here -->
+    </div>
+</div>
+
+<script>
+    document.getElementById("review-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Simulate fetching lesson data from the server
+        var lessonsData = [
+            { 
+                lessonName: "Lesson 1: Introduction to HTML",
+                students: [
+                    { name: "Student 1", files: ["homework1.html", "homework2.html"] },
+                    { name: "Student 2", files: ["homework1.html"] }
+                ]
+            },
+            { 
+                lessonName: "Lesson 2: CSS Basics",
+                students: [
+                    { name: "Student 1", files: ["styles.css"] },
+                    { name: "Student 2", files: ["styles.css"] }
+                ]
+            }
+            // Add more lesson data as needed
+        ];
+
+        var lessonsContainer = document.getElementById("lessons-container");
+        lessonsContainer.innerHTML = ""; // Clear previous lessons
+
+        lessonsData.forEach(function(lesson) {
+            var lessonDiv = document.createElement("div");
+            lessonDiv.classList.add("lesson");
+
+            var lessonHeading = document.createElement("h2");
+            lessonHeading.textContent = lesson.lessonName;
+            lessonDiv.appendChild(lessonHeading);
+
+            lesson.students.forEach(function(student) {
+                var studentDiv = document.createElement("div");
+                studentDiv.classList.add("student");
+
+                var studentHeading = document.createElement("h3");
+                studentHeading.textContent = student.name;
+                studentDiv.appendChild(studentHeading);
+
+                var filesList = document.createElement("ul");
+                filesList.classList.add("files-list");
+                student.files.forEach(function(file) {
+                    var fileItem = document.createElement("li");
+                    fileItem.textContent = file;
+                    filesList.appendChild(fileItem);
+                });
+                studentDiv.appendChild(filesList);
+
+                lessonDiv.appendChild(studentDiv);
+            });
+
+            lessonsContainer.appendChild(lessonDiv);
+        });
+
+        lessonsContainer.style.display = "block"; // Show the lessons container
+    });
+</script>
+
+</body>
+</html>

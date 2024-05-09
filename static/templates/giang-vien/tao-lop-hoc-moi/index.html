@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Học Toán anh Thành - Thêm Lớp học mới</title>
+
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/logo/favicon.ico') }}" type="image/x-icon">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='templates/common-styles.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ template_folder }}/styles.css" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Icons font CSS-->
+    <link href="{{ template_folder }}/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="{{ template_folder }}/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ template_folder }}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="{{ template_folder }}/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ template_folder }}/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-lexend">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Tạo Lớp học mới</h2>
+                    <form method="POST" id="main-form">
+                        <div class="row row-space">
+                            <div class="col-1">
+                                <div class="input-group">
+                                    <label class="label">Tên lớp học</label>
+                                    <input class="input--style-4" type="text" id="class-name" required>
+                                </div>
+                            </div>
+                            <!-- <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="last_name">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Ngày khai giảng</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" id="khai-giang-date" required>
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="phone">
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Subject -->
+                        <div class="input-group">
+                            <label class="label">Subject</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id="subject" onchange="chooseSubject()" required>
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Toán</option>
+                                    <option>Vật lý</option>
+                                    <option>Hóa học</option>
+                                    <option>English</option>
+                                    <option>Ôn thi Học bổng Đại học FPT</option>
+                                    <option>Khác</option>
+                                    <!-- <option>Subject 2</option>
+                                    <option>Subject 3</option> -->
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-1" id="other-subject-part" style="display: none;">
+                            <div class="input-group">
+                                <label class="label">Enter your subject name:</label>
+                                <input class="input--style-4" type="text" id="other-subject">
+                            </div>
+                        </div>
+
+                        <!-- Grade -->
+                        <div class="input-group">
+                            <label class="label">Grade</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id="grade" onchange="chooseGrade()">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>12 - Ôn thi THPTQG</option>
+                                    <option>12 - Cơ bản</option>
+                                    <option>11</option>
+                                    <option>10</option>
+                                    <option>9</option>
+                                    <option>8</option>
+                                    <option>7</option>
+                                    <option>6</option>
+                                    <option>5</option>
+                                    <option>Khác</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-1" id="other-grade-part" style="display: none;">
+                            <div class="input-group">
+                                <label class="label">Enter your grade:</label>
+                                <input class="input--style-4" type="text" id="other-grade">
+                            </div>
+                        </div>
+
+                        <!-- Program -->
+                        <div class="input-group">
+                            <label class="label">Chương trình học</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id="program" onchange="chooseProgram()">
+                                    <option disabled="disabled" selected="selected">Choose program</option>
+                                    <option>Chương trình cũ</option>
+                                    <option>Chân trời sáng tạo</option>
+                                    <option>Cánh diều</option>
+                                    <option>Khác</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-1" id="other-program-part" style="display: none;">
+                            <div class="input-group">
+                                <label class="label">Enter your program:</label>
+                                <input class="input--style-4" type="text" id="other-program">
+                            </div>
+                        </div>
+
+                        <!-- Sheets IDs -->
+                        <div class="col-1">
+                            <div class="input-group">
+                                <label class="label">Bảng Đánh giá Học viên</label>
+                                <input class="input--style-4" type="text" placeholder="Enter your Google Sheet ID" id="bang-dghv-sheet-id" required>
+                            </div>
+                        </div>
+
+                        <div class="col-1">
+                            <div class="input-group">
+                                <label class="label">Syllabus</label>
+                                <input class="input--style-4" type="text" placeholder="Enter your Google Sheet ID" id="syllabus-sheet-id" required>
+                            </div>
+                        </div>
+
+
+
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <img src="{{ url_for('static', filename='assets/img/icons/loading.gif') }}" id="loading-icon" style="display: none;">
+
+
+        <script src="{{ url_for('static', filename='templates/common-script.js') }}"></script>
+        <script></script>
+        <script src="{{ template_folder }}/script.js"></script>
+
+
+
+    <!-- Jquery JS-->
+    <script src="{{ template_folder }}/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="{{ template_folder }}/vendor/select2/select2.min.js"></script>
+    <script src="{{ template_folder }}/vendor/datepicker/moment.min.js"></script>
+    <script src="{{ template_folder }}/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="{{ template_folder }}/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

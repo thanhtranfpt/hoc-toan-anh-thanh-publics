@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+h2 {
+    margin-top: 50px;
+}
+
+#title {
+    margin-top: calc(var(--header-height) + 50px);
+}
+
+.results-title {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2994a; /* eaeaea, d9d9d9 */
+    color: white;
+    font-weight: bold;
+}
+
+/* Italicize text in the last header cell */
+th:last-child {
+    font-style: italic;
+}
+
+/* Style header cells in columns 4 to 10 to fit content */
+th:nth-child(n+4):nth-child(-n+10) {
+    width: 1%; /* Allow content-based width */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+
+/* Style columns 4 to 9 to fit content */
+td:nth-child(n+4):nth-child(-n+9) {
+    width: 1%; /* Allow content-based width */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Allow text wrapping in the last column */
+td:last-child {
+    white-space: pre-wrap; /* Preserve line breaks and wrap content */
+    word-wrap: break-word;
+    /* word-break: break-word; Break words when needed */
+}
+
+td:last-child {
+    text-align: left;
+}
+
+
+/* Center align cells in rows (excluding the last column) */
+/* tr:not(:last-child) td:not(:last-child) {
+    text-align: center;
+} */
+
+
+
+tr:last-child, tr:nth-last-child(2) {
+    font-weight: bold;
+}
+
+/* Style the cell at the intersection of near last row and column 4 (from 1) */
+tr:last-child td:nth-child(4), tr:nth-last-child(2) td:nth-child(4) {
+    font-style: italic;
+    text-align: left;
+}
+
+
+/* Apply background colors to alternate rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray color for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White color for odd rows */
+}
+
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], #month-year {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+@media (max-width: 600px) {
+    /* Adjust the font size for better readability on smaller screens */
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 16px;
+    }
+    /* Adjust the table width to fit smaller screens */
+    table {
+        width: 95%;
+    }
+}

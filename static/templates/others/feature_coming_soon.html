@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Học Toán anh Thành</title>
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/logo/favicon.ico') }}" type="image/x-icon">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='templates/common-styles.css') }}" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </head>
+    <body>
+        <!-- <header>
+            <h1>Your Website Header</h1>
+        </header> -->
+        <main>
+            <!-- <h2>Welcome to Your Website</h2> -->
+
+            <div id="nav-pages">
+                <img src="{{ url_for('static', filename='assets/img/icons/back.png') }}" class="back-icon" onclick="window.history.back()">
+                <img src="{{ url_for('static', filename='assets/img/icons/home.png') }}" class="home-icon" onclick="window.location.href = '/'">
+            </div>
+
+        </main>
+        <!-- <footer>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer> -->
+
+
+
+
+        <img src="{{ url_for('static', filename='assets/img/icons/loading-icon.gif') }}" id="loading-icon" style="display: none;">
+
+
+        <script src="{{ url_for('static', filename='templates/common-script.js') }}"></script>
+        <script>
+            Swal.fire({
+                title: "Tính năng sắp ra mắt!",
+                html: "Tính năng này sắp được ra mắt, bạn vui lòng ghé thăm lại sau nhé.<br> <i>Nếu có việc gì cần gấp, bạn hãy liên hệ:</i><br> 038 908 6735",
+                icon: 'info'
+            });
+        </script>
+    </body>
+</html>

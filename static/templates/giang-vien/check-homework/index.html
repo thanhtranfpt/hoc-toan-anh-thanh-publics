@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Học Toán anh Thành - Check Homework</title>
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/logo/favicon.ico') }}" type="image/x-icon">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='templates/common-styles.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ template_folder }}/styles.css" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </head>
+    <body>
+        <!-- <header>
+            <h1>Your Website Header</h1>
+        </header> -->
+        <main>
+            <!-- <h2>Welcome to Your Website</h2> -->
+
+            <div id="nav-pages">
+                <img src="{{ url_for('static', filename='assets/img/icons/back.png') }}" class="back-icon" onclick="window.history.back()">
+                <img src="{{ url_for('static', filename='assets/img/icons/home.png') }}" class="home-icon" onclick="window.location.href = '/'">
+            </div>
+
+
+            <div class="container">
+                <h1>Homework Review</h1>
+                <form id="review-form">
+                    <div class="form-group">
+                        <label for="month">Select Month:</label>
+                        <select id="month" name="month">
+                            <!-- <option>January</option> -->
+                            {% for month_year in months_years %}
+                            <option>{{ month_year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="lessons-container" id="lessons-container" style="display: none;"></div>
+            </div>
+
+        </main>
+        <!-- <footer>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer> -->
+
+
+
+
+        <img src="{{ url_for('static', filename='assets/img/icons/loading.gif') }}" id="loading-icon" style="display: none;">
+
+
+        <script src="{{ url_for('static', filename='templates/common-script.js') }}"></script>
+        <script>
+            const classesName = {{ classes_name | tojson | safe }};
+        </script>
+        <script src="{{ template_folder }}/script.js"></script>
+    </body>
+</html>

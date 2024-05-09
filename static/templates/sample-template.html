@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Học Toán anh Thành</title>
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/logo/favicon.ico') }}" type="image/x-icon">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='templates/common-styles.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ template_folder }}/styles.css" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </head>
+    <body>
+        <!-- <header>
+            <h1>Your Website Header</h1>
+        </header> -->
+        <main>
+            <!-- <h2>Welcome to Your Website</h2> -->
+
+            <div id="nav-pages">
+                <img src="{{ url_for('static', filename='assets/img/icons/back.png') }}" class="back-icon" onclick="window.history.back()">
+                <img src="{{ url_for('static', filename='assets/img/icons/home.png') }}" class="home-icon" onclick="window.location.href = '/'">
+            </div>
+
+        </main>
+        <!-- <footer>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer> -->
+
+
+
+
+        <img src="{{ url_for('static', filename='assets/img/icons/loading.gif') }}" id="loading-icon" style="display: none;">
+
+
+        <script src="{{ url_for('static', filename='templates/common-script.js') }}"></script>
+        <script></script>
+        <script src="{{ template_folder }}/script.js"></script>
+    </body>
+</html>

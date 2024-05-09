@@ -1,0 +1,17 @@
+Flask
+Flask-Cors
+requests
+CacheControl
+gunicorn
+Unidecode
+bcrypt
+PyYAML
+google-generativeai
+firebase-admin
+Pyrebase4
+google-auth-oauthlib
+Markdown
+parsel
+pandas
+beautifulsoup4
+mdtex2html

@@ -1,0 +1,103 @@
+/* body {
+    font-family: Arial, sans-serif;
+} */
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3498db;
+
+    margin-top: calc(var(--header-height) + 20px);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.part {
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.part-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần PDF tự động xuống dòng khi không đủ chỗ */
+    justify-content: flex-start; /* Căn trái cho các phần PDF */
+}
+.pdf {
+    width: calc(50% - 10px); /* Điều chỉnh chiều rộng của từng phần PDF, 50% trên mỗi dòng */
+    height: 300px; /* Điều chỉnh chiều cao của từng phần PDF */
+    margin: 5px; /* Khoảng cách giữa các phần PDF */
+}
+
+.others {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+/* Apply some basic styling to the form */
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the label for the dropdown */
+label {
+    font-weight: bold;
+}
+
+/* Style the dropdown itself */
+#month-year {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Change button color on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Hover color */
+}
+
+
+
+/* Media query for mobile devices with a max-width of, for example, 768px */
+@media (max-width: 768px) {
+    .pdf {
+        width: 100%; /* Make the width 100% for mobile devices */
+        height: 500px; /* Điều chỉnh chiều cao của từng phần PDF */
+        margin: 10px; /* Khoảng cách giữa các phần PDF */
+    }
+}
+
+
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+}

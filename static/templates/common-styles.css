@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --header-height: 10vh;
+}
+
+
+
+body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#nav-pages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 99999;
+}
+
+#nav-pages > .back-icon {
+    position: relative;
+    left: 5vw;
+    width: 7.5vw;
+    max-width: calc(0.75 * 0.75 * var(--header-height));
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#nav-pages > .home-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    max-width: calc(0.75 * var(--header-height));
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#loading-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: auto;
+}

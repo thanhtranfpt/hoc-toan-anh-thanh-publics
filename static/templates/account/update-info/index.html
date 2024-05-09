@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Học Toán anh Thành - Tài khoản của tôi</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo/favicon.ico') }}" type="image/x-icon">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='templates/common-styles.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ template_folder }}/styles.css" type="text/css">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
+  <body>
+    <section class="container">
+      <header>Cập nhật thông tin</header>
+
+      <div id="avatar-part">
+          <div class="wrapper">
+              <img src="{{ user['avatar'] }}" id="user-avatar">
+          </div>
+          <div class="camera-icon">
+              <img src="{{ url_for('static', filename='assets/img/icons/camera.png') }}">
+              <input type="file" accept="image/*" id="avatar-image-input" onchange="uploadAvatarImage(event)">
+          </div>
+      </div>
+
+      <form action="#" class="form" id="main-form">
+
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" id="full-name" placeholder="Enter full name" readonly />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Họ</label>
+            <input type="text" id="family-name" onkeyup="showFullName()" value="{{ user['family_name'] }}"/>
+          </div>
+          <div class="input-box">
+            <label>Tên</label>
+            <input type="text" id="given-name" onkeyup="showFullName()" value="{{ user['given_name'] }}"/>
+          </div>
+        </div>
+
+        <div class="gender-box">
+          <div class="gender-option" id="thu-tu-hien-thi-ten-option">
+            <div class="gender" onclick="showFullName()">
+              <input type="radio" id="check-family_name_first" name="thu-tu-hien-thi-ten" />
+              <label for="check-family_name_first">Hiển thị Họ trước</label>
+            </div>
+            <div></div>
+            <div class="gender" onclick="showFullName()">
+              <input type="radio" id="check-given_name_first" name="thu-tu-hien-thi-ten" />
+              <label for="check-given_name_first">Hiển thị Tên trước</label>
+            </div>
+          </div>
+        </div>
+
+
+        {% if user['login_method'] == 'username-password' %}
+        <div class="input-box">
+          <label>Tên đăng nhập</label>
+          <input type="text" value="{{ user['account']['username'] }}" readonly style="cursor: pointer;" />
+        </div>
+
+        <div class="input-box" onclick="changePassword()">
+          <label>Mật khẩu</label>
+          <input type="password" value="**********" readonly style="cursor: pointer;" />
+        </div>
+        {% elif user['login_method'] == 'google' %}
+        <div class="input-box">
+          <label>Email Đăng nhập</label>
+          <input type="email" value="{{ user['account']['email'] }}" readonly style="cursor: pointer;" />
+        </div>
+        {% endif %}
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="Enter email address" value="{{ user.get('email', '') }}" />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" id="phone" placeholder="Enter phone number" value="{{ user.get('phone', '') }}" />
+          </div>
+          <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" id="dob" placeholder="Enter birth date" value="{{ user.get('dob', '') }}" />
+          </div>
+        </div>
+
+        <div class="gender-box">
+          <h3 style="font-weight: 300;">Giới tính</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" required />
+              <label for="check-male">Nam</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Nữ</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">Prefer not to say</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-box address">
+          <label>Address</label>
+          <input type="text" id="address-line-1" placeholder="Enter street address" value="{{ user['address']['line_1'] }}" />
+          <input type="text" id="address-line-2" placeholder="Enter street address line 2" value="{{ user['address']['line_2'] }}" />
+          <div class="column">
+            <div class="select-box">
+              <select id="nation">
+                <option hidden>Country</option>
+                <option>Việt Nam</option>
+                <option>America</option>
+                <option>Japan</option>
+                <option>India</option>
+                <option>Nepal</option>
+              </select>
+            </div>
+            <input type="text" id="city" placeholder="Enter your city" value="{{ user['address']['city'] }}" />
+          </div>
+          <div class="column">
+            <input type="text" id="region" placeholder="Enter your region" value="{{ user['address']['region'] }}" />
+            <input type="number" id="postal-code" placeholder="Enter postal code" value="{{ user['address']['postal_code'] }}" />
+          </div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </section>
+
+
+
+
+    <img src="{{ url_for('static', filename='assets/img/icons/loading.gif') }}" id="loading-icon" style="display: none;">
+
+
+
+    <script src="{{ url_for('static', filename='templates/common-script.js') }}"></script>
+    <script>
+      const redirectUrl = "{{ next | default('') }}";
+      const user = {{ user | tojson | safe }};
+    </script>
+    <script src="{{ template_folder }}/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: none;
+}
+
+/* BLUE */
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    background-color: #d3d7ed;
+    display: flex;
+    padding-bottom: 150px;
+}
+
+main {
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #f2f2f2;
+    width: 90vw;
+    max-width: 600px;
+    padding-top: 0;
+    padding-bottom: 70px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+main header {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    margin: 0 auto;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+    margin-bottom: 25px;
+}
+
+#logo img {
+    position: relative;
+    height: 100px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+main header .header-menu {
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    color: #000050;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+
+main header .header-menu div {
+    cursor: pointer;
+}
+
+main header .header-menu .header-active-button {
+    background-color: transparent;
+    border: none;
+}
+
+main header .header-menu .header-inactive-button:hover + .header-inactive-line {
+    width: 90%;
+}
+
+main header .header-menu .header-inactive-line {
+    margin: 5px auto;
+    height: 4px;
+    width: 50%;
+    background-color: #2d38f0;
+    border-radius: 2px;
+    transition-duration: 200ms;
+    display: block;
+}
+
+main header .header-menu .header-active-button {
+    background-color: #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition-duration: 400ms;
+}
+
+main header .header-menu .header-active-button:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 300px);
+    justify-content: center;
+    gap: 20px;
+}
+
+main .content-wrapper .client-info {
+    margin: 0 auto;
+    width: 70%;
+    height: 60px;
+    background-color: #e5ebf5;
+    border: solid #e5ebf5 2px;
+    border-radius: 15px;
+    text-indent: 20px;
+    color: #19122b;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+main .content-wrapper .client-info:focus {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .content-wrapper .client-info:not(:focus):invalid {
+    border: solid #ff4242 2px;
+}
+
+main .content-wrapper #recovery:link {
+    text-decoration: none;
+    color: #777a84;
+    padding-left: 54%;
+}
+
+main .content-wrapper .submit-button {
+    width: 70%;
+    height: 60px;
+    background-color: #313af1;
+    border: none;
+    margin: 20px auto 40px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 15px;
+    font-weight: 400;
+    transition-duration: 200ms;
+}
+
+main .content-wrapper .submit-button:hover {
+    box-shadow: 0 20px 20px rgba(49, 59, 241, 0.5);
+}
+
+main .content-wrapper #other-option-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 50px;
+}
+
+main .content-wrapper #other-option-wrapper .line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #d8d8d9;
+    margin-top: 0.6em;
+}
+
+main .content-wrapper #other-option-wrapper #continue-with {
+    margin-left: 7%;
+    margin-right: 7%;
+    color: #9599ab;
+}
+
+main .content-wrapper #other-icon-wrapper {
+    margin: 10px auto;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main .content-wrapper #other-icon-wrapper .other-icon {
+    display: flex;
+    width: 25%;
+    height: 60px;
+    background-color: transparent;
+    border: solid #dddede 2px;
+    border-radius: 10px;
+    transition-duration: 400ms;
+}
+
+main .content-wrapper #other-icon-wrapper .other-icon:hover {
+    border: solid #fff 2px;
+    background-color: #fff;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .content-wrapper #other-icon-wrapper .other-icon svg {
+    height: 60%;
+    margin: auto;
+}
+
+
+
+/* layer-2 */
+#layer-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#health-conditions-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 60vh;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#health-conditions-wrapper .close-btn {
+    position: absolute;
+    width: calc(39/430 * 100vw);
+    height: calc(39/430 * 100vw);
+    max-width: 39px;
+    max-height: 39px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-btn img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+#health-conditions-wrapper > .header {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#health-conditions {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+#health-conditions .item {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Customize the label (the container) */
+#health-conditions .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+#health-conditions .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+#health-conditions .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+#health-conditions .container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+#health-conditions .container input:checked ~ .checkmark {
+    background-color: red;
+    /* #2196F3 */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+#health-conditions .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+#health-conditions .container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+#health-conditions .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

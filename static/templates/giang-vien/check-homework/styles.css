@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+    margin-top: calc(var(--header-height) + 50px);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+#month, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.lessons-container {
+    margin-top: 20px;
+}
+.lesson {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.lesson h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.student {
+    margin-bottom: 10px;
+}
+.student h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.files-list {
+    list-style-type: none;
+    padding: 0;
+}
+.files-list li {
+    margin-bottom: 5px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+button[type="submit"]:hover {
+    background-color: #45a049;
+}

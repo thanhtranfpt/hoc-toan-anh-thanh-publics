@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Selection</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .chapter {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: #666;
+    }
+    .lesson-checkbox {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .results {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #recommended-schedule {
+        margin-top: 20px;
+    }
+
+    /* Style for the submit button */
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Hover effect for the submit button */
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Nội dung Kiểm tra, Đánh giá</h1>
+    <form id="lessons-form">
+        <div class="form-group">
+            <div class="chapter">Chương 1: Khảo sát hàm số</div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+
+            <div class="chapter">Chương 2: Khảo sát hàm số</div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+            <div class="lesson-checkbox">
+                <input type="checkbox" id="lesson-1" name="lesson" value="Bài 1. Đạo hàm">
+                <label for="lesson-1">Mathematics</label>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="results" id="results">
+        <h2>Recommended Schedule:</h2>
+        <div id="recommended-schedule"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("lessons-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Get all selected lessons
+        var selectedLessons = [];
+        var checkboxes = document.querySelectorAll('input[name="lesson"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            selectedLessons.push(checkbox.value);
+        });
+        // // Display the selected lessons
+        // var resultsDiv = document.getElementById("results");
+        // var recommendedLessonsList = document.getElementById("recommended-lessons");
+        // recommendedLessonsList.innerHTML = ""; // Clear previous results
+        // selectedLessons.forEach(function(lesson) {
+        //     var li = document.createElement("li");
+        //     li.textContent = lesson;
+        //     recommendedLessonsList.appendChild(li);
+        // });
+        // resultsDiv.style.display = "block"; // Show the results div
+    });
+</script>
+
+</body>
+</html>

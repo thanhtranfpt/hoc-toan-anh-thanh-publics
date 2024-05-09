@@ -1,0 +1,99 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3498db;
+
+    margin-top: calc(var(--header-height) + 20px);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.lesson {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lesson h2 {
+    color: #333;
+}
+
+.lesson p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Apply some basic styling to the form */
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the label for the dropdown */
+label {
+    font-weight: bold;
+}
+
+/* Style the dropdown itself */
+#month-year {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Change button color on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Hover color */
+}
+
+
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+}

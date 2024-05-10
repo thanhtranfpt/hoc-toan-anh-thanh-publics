@@ -16,6 +16,7 @@ from blueprints.hoc_vien import hoc_vien
 from blueprints.classes import classes
 from blueprints.account import account
 from blueprints.tro_ly_hoc_tap import tro_ly_hoc_tap
+from blueprints.downloads import downloads
 
 
 
@@ -77,6 +78,8 @@ app.register_blueprint(classes, url_prefix = '/classes')
 app.register_blueprint(account, url_prefix = '/my-account')
 
 app.register_blueprint(tro_ly_hoc_tap, url_prefix = '/tro-ly-hoc-tap')
+
+app.register_blueprint(downloads, url_prefix = '/downloads')
 
 
 
